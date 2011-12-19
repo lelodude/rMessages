@@ -27,7 +27,25 @@ public class PListener extends PlayerListener {
 			String name = event.getPlayer().getName();
 			String dispname = event.getPlayer().getDisplayName();
 			String world = event.getPlayer().getWorld().getName();
-
+			int health = event.getPlayer().getHealth();
+			String healthtext = null;
+			
+			if (format.contains("{healthtext}")) {
+				if (health == 20) {
+					healthtext = "full health";
+				} else if (health < 20 && health > 15) {
+					healthtext = "high health";
+				} else if (health <= 15 && health > 10) {
+					healthtext = "medium health";
+				} else if (health <= 10 && health > 0) {
+					healthtext = "low health";
+				} else if (health == 0) {
+					healthtext = "no health";
+				}
+				format = format.replace("{healthtext}", healthtext);
+			}
+			
+			format = format.replace("{health}", Integer.toString(health));
 			format = format.replace("{name}", name);
 			format = format.replace("{dispname}", dispname);
 			format = format.replace("{world}", world);
