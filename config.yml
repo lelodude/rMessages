@@ -1,0 +1,5 @@
+login-format: "&e{name} has entered the game."
+quit-format: "&e{name} has left the game."
+enable-login-message: true
+enable-quit-message: true
+tell-console: false

@@ -1,0 +1,10 @@
+name: RoyalMessages
+main: org.royaldev.royalmessages.RoyalMessages
+version: 0.0.1
+softdepend: [Vault]
+author: jkcclemens
+
+commands:
+  rmessages:
+    description: Reloads RoyalMessages' config and displays version number.
+    usage: /<command>
