@@ -1,5 +1,7 @@
 login-format: "&e{name} has entered the game."
 quit-format: "&e{name} has left the game."
+kick-format: "&e{name} was kicked."
 enable-login-message: true
 enable-quit-message: true
+enable-kick-message: true
 tell-console: false
