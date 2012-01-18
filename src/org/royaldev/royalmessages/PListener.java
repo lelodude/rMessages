@@ -2,12 +2,14 @@ package org.royaldev.royalmessages;
 
 import java.util.logging.Logger;
 
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
-import org.bukkit.event.player.PlayerListener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-public class PListener extends PlayerListener {
+public class PListener implements Listener {
 
     RoyalMessages plugin;
 
@@ -17,6 +19,7 @@ public class PListener extends PlayerListener {
         this.plugin = plugin;
     }
 
+    @EventHandler(event = PlayerKickEvent.class, priority = EventPriority.NORMAL)
     public void onPlayerKick(PlayerKickEvent e) {
         if (!plugin.useKick) {
             e.setLeaveMessage("");
@@ -59,6 +62,7 @@ public class PListener extends PlayerListener {
         }
     }
 
+    @EventHandler(event = PlayerJoinEvent.class, priority = EventPriority.NORMAL)
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (!plugin.uselogin) {
             event.setJoinMessage("");
@@ -101,6 +105,7 @@ public class PListener extends PlayerListener {
         }
     }
 
+    @EventHandler(event = PlayerQuitEvent.class, priority = EventPriority.NORMAL)
     public void onPlayerQuit(PlayerQuitEvent event) {
         if (!plugin.usequit) {
             event.setQuitMessage("");

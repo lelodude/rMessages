@@ -20,7 +20,6 @@ package org.royaldev.royalmessages;
 
 import java.util.logging.Logger;
 
-import org.bukkit.event.Event;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -62,11 +61,7 @@ public class RoyalMessages extends JavaPlugin {
 
         PluginManager pm = this.getServer().getPluginManager();
 
-        pm.registerEvent(Event.Type.PLAYER_JOIN, playerListener,
-                Event.Priority.Normal, this);
-        pm.registerEvent(Event.Type.PLAYER_QUIT, playerListener,
-                Event.Priority.Normal, this);
-        pm.registerEvent(Event.Type.PLAYER_KICK, playerListener, Event.Priority.Normal, this);
+        pm.registerEvents(playerListener, this);
 
         loadConfiguration();
 
