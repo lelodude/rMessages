@@ -25,7 +25,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class RoyalMessages extends JavaPlugin {
 
-    public String version = "0.0.1";
+    public String version;
 
     private final PListener playerListener = new PListener(this);
 
@@ -55,6 +55,8 @@ public class RoyalMessages extends JavaPlugin {
 
     public void onEnable() {
 
+        version = this.getDescription().getVersion();
+
         Commands cmdExec = new Commands(this);
 
         getCommand("rmessages").setExecutor(cmdExec);
@@ -71,7 +73,7 @@ public class RoyalMessages extends JavaPlugin {
 
     public void onDisable() {
 
-        log.info("[RoyalMessages] RoyalMessages v" + version + "disabled.");
+        log.info("[RoyalMessages] RoyalMessages v" + version + " disabled.");
 
     }
 
