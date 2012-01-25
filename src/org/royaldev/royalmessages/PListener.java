@@ -19,7 +19,7 @@ public class PListener implements Listener {
         this.plugin = plugin;
     }
 
-    @EventHandler(event = PlayerKickEvent.class, priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerKick(PlayerKickEvent e) {
         if (!plugin.useKick) {
             e.setLeaveMessage("");
@@ -62,7 +62,7 @@ public class PListener implements Listener {
         }
     }
 
-    @EventHandler(event = PlayerJoinEvent.class, priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
         if (!plugin.uselogin) {
             event.setJoinMessage("");
@@ -105,7 +105,7 @@ public class PListener implements Listener {
         }
     }
 
-    @EventHandler(event = PlayerQuitEvent.class, priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerQuit(PlayerQuitEvent event) {
         if (!plugin.usequit) {
             event.setQuitMessage("");
