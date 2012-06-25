@@ -22,6 +22,7 @@
 		<javac srcdir="${src}" destdir="${build}" includeantruntime="false">
 			<classpath>
                 <pathelement location="lib/bukkit-1.1-R1-SNAPSHOT.jar"/>
+                <pathelement location="lib/Multiverse-Core-2.4.jar"/>
 			</classpath>
 		</javac>
 	</target>

@@ -18,10 +18,14 @@ package org.royaldev.royalmessages;
  If forked and not credited, alert him.
  */
 
-import java.util.logging.Logger;
-
+import com.onarandombox.MultiverseCore.MultiverseCore;
+import com.onarandombox.MultiverseCore.api.MultiverseWorld;
+import org.bukkit.World;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.logging.Logger;
 
 public class RoyalMessages extends JavaPlugin {
 
@@ -32,23 +36,38 @@ public class RoyalMessages extends JavaPlugin {
     public String loginformat = null;
     public String quitformat = null;
     public String kickFormat = null;
+    public String worldFormat = null;
     public Boolean uselogin = null;
     public Boolean usequit = null;
     public Boolean useKick = null;
+    public Boolean useWorld = null;
     public Boolean tellconsole = null;
 
     public void loadConfiguration() {
-        this.getConfig().options().copyDefaults(true);
-        this.saveConfig();
-        loginformat = this.getConfig().getString("login-format")
-                .replaceAll("(&([a-f0-9]))", "\u00A7$2");
-        quitformat = this.getConfig().getString("quit-format")
-                .replaceAll("(&([a-f0-9]))", "\u00A7$2");
-        kickFormat = this.getConfig().getString("kick-format").replaceAll("(&([a-f0-9]))", "\u00A7$2");
-        usequit = this.getConfig().getBoolean("enable-quit-message");
-        uselogin = this.getConfig().getBoolean("enable-login-message");
-        tellconsole = this.getConfig().getBoolean("tell-console");
-        useKick = this.getConfig().getBoolean("enable-kick-message");
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+        loginformat = colorize(getConfig().getString("login-format"));
+        quitformat = colorize(getConfig().getString("quit-format"));
+        kickFormat = colorize(getConfig().getString("kick-format"));
+        worldFormat = colorize(getConfig().getString("world-format"));
+        usequit = getConfig().getBoolean("enable-quit-message");
+        uselogin = getConfig().getBoolean("enable-login-message");
+        tellconsole = getConfig().getBoolean("tell-console");
+        useKick = getConfig().getBoolean("enable-kick-message");
+        useWorld = getConfig().getBoolean("enable-world-message");
+    }
+
+    public String returnAlias(World w) {
+        Plugin mv = getServer().getPluginManager().getPlugin("Multiverse-Core");
+        if (mv == null) return w.getName();
+        MultiverseCore mvc = (MultiverseCore) mv;
+        MultiverseWorld mvw = mvc.getMVWorldManager().getMVWorld(w);
+        return mvw.getColoredWorldString();
+    }
+
+    public String colorize(String text) {
+        if (text == null) return null;
+        return text.replaceAll("(&([a-f0-9k-orR]))", "\u00A7$2");
     }
 
     Logger log = Logger.getLogger("Minecraft");

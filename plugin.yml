@@ -1,7 +1,8 @@
 name: RoyalMessages
 main: org.royaldev.royalmessages.RoyalMessages
 version: 0.0.2
-softdepend: [Vault]
+softdepend: [Vault, Multiverse-Core]
+website: http://dev.royaldev.org/
 author: jkcclemens
 
 commands:
