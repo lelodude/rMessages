@@ -1,3 +1,8 @@
+# THIS INFO IS NOT ACCURATE
+
+This plugin has been taken over by another dev, and he has yet to update this README if you're reading this.
+Goodbye, rMsgs.
+
 RoyalMessages
 =========
 
