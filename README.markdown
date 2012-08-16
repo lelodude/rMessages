@@ -14,7 +14,7 @@ RoyalMessages is coded in Eclipse 3.7.1 with the following libraries:
 
 ### Contact
 
- * Email: jkc.clemens@gmail.com
+ * Skype: Lelo.Dude
  * Minecraft username: jkcclemens
 
 ### Bleeding Edge Builds
