@@ -10,15 +10,16 @@ import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
+
 import java.util.logging.Logger;
 
 public class PListener implements Listener {
 
-    RoyalMessages plugin;
+    rMessages plugin;
 
     Logger log = Logger.getLogger("Minecraft");
 
-    public PListener(RoyalMessages plugin) {
+    public PListener(rMessages plugin) {
         this.plugin = plugin;
     }
 
