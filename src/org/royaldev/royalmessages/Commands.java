@@ -7,9 +7,9 @@ import org.bukkit.command.CommandSender;
 
 public class Commands implements CommandExecutor {
 
-    RoyalMessages plugin;
+    rMessages plugin;
 
-    public Commands(RoyalMessages plugin) {
+    public Commands(rMessages plugin) {
         this.plugin = plugin;
     }
 
