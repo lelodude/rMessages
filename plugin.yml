@@ -1,9 +1,9 @@
-name: RoyalMessages
-main: org.royaldev.royalmessages.RoyalMessages
-version: 0.0.2
+name: rMessages
+main: org.royaldev.royalmessages.rMessages
+version: 0.0.3
 softdepend: [Vault, Multiverse-Core]
-website: http://dev.royaldev.org/
-author: jkcclemens
+website: https://github.com/lelodude/RoyalMessages
+author: Lelo
 
 commands:
   rmessages:
