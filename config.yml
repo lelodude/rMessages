@@ -1,9 +1,9 @@
-login-format: "&e{name} has entered the game."
-quit-format: "&e{name} has left the game."
-kick-format: "&e{name} was kicked."
+login-format: '&2[+] &ePlayer &7{name} &econnected!'
+quit-format: '&4[-] &ePlayer &7{name} &edisconnected!'
+kick-format: "&4[-] &7{name} &ewas kicked!"
 world-format: "&e{name} has joined {world} from {fromworld}."
 enable-login-message: true
 enable-quit-message: true
 enable-kick-message: true
-enable-world-message: true
+enable-world-message: false
 tell-console: false
